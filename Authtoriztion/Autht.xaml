@@ -1,0 +1,39 @@
+﻿<Window x:Class="Authtoriztion.Autht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authtoriztion"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Телеком Нева Связь" FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15"/>
+        <Image VerticalAlignment="Top" HorizontalAlignment="Right" Source="Resources/Лого ТНС.jpg" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Номер" Margin="0 0 10 0"/>
+                <TextBox x:Name="tbNumb" Width="120" KeyDown="tbNumb_KeyDown"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 5" HorizontalAlignment="Right">
+                <TextBlock Text="Пароль" Margin="0 0 10 0" IsEnabled="False"/>
+                <PasswordBox x:Name="tbPwd" Width="120" IsEnabled="False" KeyDown="tbPwd_KeyDown"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Код" Margin="0 0 10 0"/>
+                <TextBox x:Name="tbCode" Width="90" Margin="0 0 10 0" IsEnabled="False" KeyDown="tbCode_KeyDown"/>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Height="18" Click="clReturn" x:Name="btImage" IsEnabled="False">
+                <Image Source="Resources/На авторизацию_Обновление кода.jpg"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Отмена" Margin="10 0" Click="clCancel"/>
+            <Button Content="Вход" x:Name="btSign" Click="clSign" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>
